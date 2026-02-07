@@ -22,7 +22,7 @@ def calculadora():
         if num2 != 0:
             print(f"{num1} / {num2} = {num1 / num2}")
         else:
-            print("Error: No se puede dividir entre cero")
+            print("Error: No se puede dividir entre cerso")
     else:
         print("Opción no válida") 
         print("hola")
