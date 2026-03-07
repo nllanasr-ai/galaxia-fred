@@ -1,0 +1,34 @@
+tareas = ["Tarea 1", "Tarea 2", "Tarea 3"]
+
+while True:
+    print("\nTareas pendientes:")
+    for idx, tarea in enumerate(tareas, 1):
+        print(f"{idx}. {tarea}")
+
+    print("\nOpciones:")
+    print("a - Agregar nueva tarea")
+    print("c - Marcar tarea como completada")
+    print("q - Salir")
+
+    opcion = input("Elige una opción: ").strip().lower()
+
+    if opcion == 'a':
+        nueva_tarea = input("Ingresa la nueva tarea: ")
+        if nueva_tarea:
+            tareas.append(nueva_tarea)
+    elif opcion == 'c':
+        numero = input("Número de la tarea completada: ")
+        if numero.isdigit():
+            indice = int(numero) - 1
+            if 0 <= indice < len(tareas):
+                tarea_completada = tareas.pop(indice)
+                print(f"Tarea '{tarea_completada}' marcada como completada.")
+            else:
+                print("Número de tarea inválido.")
+        else:
+            print("Por favor ingresa un número válido.")
+    elif opcion == 'q':
+        print("¡Hasta luego!")
+        break
+    else:
+        print("Opción no reconocida.")
